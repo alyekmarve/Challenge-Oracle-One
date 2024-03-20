@@ -1,0 +1,242 @@
+/*Importamos el tipo de letra de google fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+
+:root {
+  /*Variables para utilizar en varias clases el mismo color*/
+  --color-blue: #0a3871;
+  --color-gray: #6089be;
+}
+
+body {
+
+  font-family: "Inter", sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+
+}
+
+/*Header*/
+.header {
+  /*Se creo una clase para el encabezado que sea mas peque{o el espacio que el total de ancho de la ántalla para que el logo quede separado del costado izquierdo*/
+  width: 90%;
+  /*se centra en automatico el contenido*/
+  margin: auto;
+
+}
+
+
+.logo {
+  /*Bajamos un poco el logo*/
+  margin-top: 50px;
+
+}
+
+/*Main*/
+.main {
+
+  width: 70%;
+  /*El margen superior e inferior se ajustarán automáticamente para centrar verticalmente el elemento.
+Habrá un margen de 200 píxeles a la derecha del elemento.
+El elemento estará centrado horizontalmente en su contenedor ya que los márgenes izquierdo y derecho son automáticos.*/
+  margin: auto 200px auto auto;
+  display: grid;
+  /*Creamos una grilla*/
+  grid-template-columns: 2fr 1fr;
+  /*Dos columnas, la primera que abarque dos fracciones del espacio disponible y la otra solo una fraccion*/
+  height: 70vh;
+  /*El alto va ser el 80% del largo de la pantalla*/
+  align-items: end;
+  /*Alineamos todas las etiquetas al final del contenedor*/
+  gap: 20px;
+}
+
+/*Left*/
+.left {
+  /*Alineamos los div en una columna*/
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+
+/*Para ingresar el texto*/
+.left textarea {
+  width: 80%;
+  height: 75%;
+  background: none;
+  /*quitamos el fondo*/
+  font-size: 32px;
+  color: var(--color-blue);
+  /*Asignamos el color segun la variable creada en root*/
+  border: 0px;
+  /*quitamos el bosrde*/
+  outline: none;
+  /*Quitamos el borde al posicionar el mouse*/
+  resize: none;
+  /*Bloqueamos poder cambiar el tamaño*/
+
+}
+
+.left textarea:placeholder {
+  color: var(--color-blue)
+    /*Cambiar el color de texto*/
+}
+
+/*Mensaje en la opcion encripatar*/
+.exclamacion {
+  display: flex;
+  align-items: start;
+  color: var(--color-gray);
+}
+
+.botones {
+  /*Los botones en la parte izquierda los ordemo con flex*/
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  /*Separación de los botones*/
+  margin: auto;
+  margin-top: 16px;
+
+}
+
+.btn-encriptar {
+  max-width: 328px;
+  width: 228px;
+  height: 67px;
+  font-size: 16px;
+  border-radius: 24px;
+  background-color: var(--color-blue);
+  color: white;
+  border: 1px solid var(--color-blue);
+  ;
+}
+
+.btn-copiar,
+.btn-desencriptar,
+.btn-encriptar {
+  cursor: pointer;
+}
+
+/*Clase asiganada a los botones de la derecha e izquierda con el mismo estilo*/
+.btn-desencriptar,
+.btn-copiar {
+  max-width: 328px;
+  width: 228px;
+  height: 67px;
+  border-radius: 24px;
+  background-color: rgba(255, 255, 255, 0);
+  color: #0A3871;
+  border: 1px solid #0A3871;
+  margin: auto;
+  font-size: 16px;
+}
+
+/*Right*/
+.right {
+
+  background-color: rgb(255, 255, 255);
+  border-radius: 32px;
+  height: calc(90% + 48px);
+  /*Al valos del contenedor main le sumamos para que el lado derecho se vea mas grande*/
+  padding: 32px;
+  box-sizing: border-box;
+  /*Para que el padding no agregue mayor tamaño El valor border-box indica que el tamaño total del elemento incluye tanto el contenido, el relleno y el borde, pero no los márgenes externos. Esto significa que si estableces un ancho o alto específico para un elemento y luego le añades relleno o un borde, el tamaño total del elemento se mantendrá constante y el contenido se ajustará en consecuencia.*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 32px;
+  align-items: center;
+  box-shadow: 1px 1px 10px 0.2px #000000;
+}
+
+.right.ajustar {
+  justify-content: space-between;
+
+}
+
+.right img {
+  width: 100%;
+
+}
+
+.right-text1 {
+  /*Damos formato al texto*/
+  text-align: center;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.right-text1.ajustar {
+  width: 100%;
+  height: 90%;
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 36px;
+  letter-spacing: 0em;
+  text-align: left;
+
+
+}
+
+.right-text2 {
+  text-align: center;
+  font-size: 16px;
+  color: var(--color-gray);
+
+
+}
+
+/*Para ocultar el boton cuando no hay texto*/
+.oculto {
+  display: none;
+}
+
+footer {
+  background-color: var(--color-blue);
+  color: #f3f1f1;
+
+  text-align: center;
+
+  width: 100vw;
+  margin-top: 200px;
+}
+
+
+
+/*Para hacer la pagina responsive cuando tenga un tamaño de tablet*/
+@media screen and (max-width:770px) {
+  .main {
+    grid-template-columns: 1fr;
+    grid-template-rows: 75% 25%;
+    width: 100%;
+    margin: auto auto;
+  }
+
+  .right {
+    width: 90%;
+    height: 80%;
+    margin: auto;
+  }
+
+  .right img {
+    display: none;
+  }
+
+  .botones {
+    justify-content: center;
+  }
+
+
+}
+
+/*Para hacer la pagina responsive cuando tenga un tamaño de telefono*/
+@media screen and (max-width:500px) {
+  .botones {
+    flex-wrap: wrap;
+    /*Para acomodar los botones en dos lineas cuando ya no quepan en el contenedor*/
+  }
+}

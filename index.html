@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador de texto</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+
+<body>
+    <header >
+        <div class="header">
+            <img class="logo" src="img/Logo.png" alt="">
+        </div>
+           </header>
+          
+    <main >
+<div class="main">
+
+
+
+        <div class="left">
+            <textarea id="textoUsuario" placeholder="Ingrese el texto aqui" onkeypress="return validarTexto(event)"></textarea>
+
+            <div class="exclamacion">
+                <img src="/img/Exclamacion.png" alt="">
+                <p>Solo letras minúsculas y sin acentos</p>
+            </div>
+            
+            <div class="botones">
+                <button onclick="encriptar()" class="btn-encriptar">Encriptar</button>
+                <button onclick="desencriptar()" class="btn-desencriptar">Desencriptar</button>
+            </div>
+           
+           </div>
+
+           <div class="right ">
+<img  id="muñeco" src="/img/Muñecoimagen.png" alt="">
+        <p id="text1" class="right-text1">Ningun mensaje fue encontrado</p>
+         <p id="text2" class="right-text2">Ingresa el texto que desees encriptar o desencriptar</p>
+        <button onclick="copiarTexto()" id="btn-copiar" class="btn-copiar oculto">Copiar</button>   
+        </div>
+    </div>
+    </main>
+    <footer>
+               <p>Desarrollado por Keyla Vásquez
+        </p>
+
+    </footer>
+    <script src="app.js" defer></script>
+
+</body>
+
+</html>
